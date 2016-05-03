@@ -11,6 +11,8 @@ warrior::warrior(string name) : fighter(name){};    //constructor warrior
 
 ninja::ninja(string name) : fighter(name){};        //constructor ninja
 
+link::link(string name) : fighter(name){};        //constructor link
+
 void warrior::warriorSpecial(){
    int rng = rand() % 6;
    if(rng == 5){

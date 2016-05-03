@@ -34,4 +34,11 @@ private:
     int ninjaSpecial();
 };
 
+class link : public fighter {
+public:
+    link(string name);
+private:
+    int linkSpecial();
+};
+
 #endif // FIGHTER_H_INCLUDED
