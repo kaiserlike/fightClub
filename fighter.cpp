@@ -23,3 +23,5 @@ void warrior::warriorSpecial(){
 void fighter::turn(string name){
 
 }
+
+
