@@ -41,11 +41,13 @@ class link : public fighter {
         int linkSpecial();
 };
 
-class zombie : public fighter {
+class cursed : public fighter {
     public:
         zombie(string name);
     private:
-        int unDead();
+        bool unDead();
 };
+
+
 
 #endif // FIGHTER_H_INCLUDED
