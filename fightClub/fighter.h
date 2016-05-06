@@ -7,45 +7,46 @@
 
 using namespace std;
 
-class fighter {
+class Fighter {
     public:
-        fighter(string name);
+        Fighter(string name);
         void turn(string name);
+        int lifePoints = 100;
+    virtual ~Fighter();
 
     protected:
         string nickname;
-        int lifePoints = 100;
         int defensePoints, offensePoints, hitPoints;
 
 };
 
-class warrior : public fighter {
+class Warrior : public Fighter {
     public:
-        warrior(string name);
+        Warrior(string name);
 
     private:
         void warriorSpecial();
 };
 
-class ninja : public fighter {
+class Ninja : public Fighter {
     public:
-        ninja(string name);
+        Ninja(string name);
     private:
-        int ninjaSpecial();
+        void ninjaSpecial();
 };
 
-class link : public fighter {
+class Link : public Fighter {
     public:
-        link(string name);
+        Link(string name);
     private:
-        int linkSpecial();
+        void linkSpecial();
 };
 
-class cursed : public fighter {
+class Cursed : public Fighter {
     public:
-        zombie(string name);
+        Cursed(string name);
     private:
-        bool unDead();
+        bool unDead(int hP);
 };
 
 

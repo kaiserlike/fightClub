@@ -5,4 +5,9 @@
 
 #include <stdio.h>
 
+
+void menu();
+
+
+
 #endif /* fightClubFunctions_h */

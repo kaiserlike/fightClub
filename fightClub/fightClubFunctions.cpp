@@ -2,7 +2,9 @@
 #include <string>
 #include <cstdlib>
 
-#include "fightClub functions.h"
+#include "fightClubFunctions.h"
+
+using namespace std;
 
 
 //WHAT WE NEED:
@@ -25,7 +27,8 @@ void createFighter(int kind){
     //we need to accomodate 4 different kinds of choices and...
     switch (kind){
         case(1):{                                                //warrior
-        
+            Bird * supertux = new Penguin("supertux");
+            
         }
         case(2):{                                                //ninja
             
@@ -43,11 +46,11 @@ void createFighter(int kind){
     
     cout << "New " << kind << "created!" << endl;
     
-    new
+
     
     
     
-};
+}
 
 //deleteFighter() function
 //delete a map item (with deconstructor + ?)
@@ -67,23 +70,6 @@ void createFighter(int kind){
 //a fighter CANNOT fight against himself (unique nickname)
 
 
-void createFighter(int kind){
-    //we need to accomodate 4 different kinds of choices and...
-    switch case kind;
-case(1)
-case(2)
-case(3)
-case(4)
-    //store them in a map, with the key being the nickname and the value being the subclass
-    
-    
-    cout << "New " << kind << "created!" << endl;
-    
-    new
-    
-    
-    
-};
 
 
 
