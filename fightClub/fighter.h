@@ -12,7 +12,7 @@ class Fighter {
         Fighter(string name);
         void turn(string name);
         int lifePoints = 100;
-    virtual ~Fighter();
+        //virtual ~Fighter();
 
     protected:
         string nickname;

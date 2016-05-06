@@ -9,6 +9,9 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <map>
+
+
 #include "fighter.h"
 #include "fightClubFunctions.h"
 
@@ -16,9 +19,8 @@ using namespace std;
 
 int main(){
     
-    int input = 0;
     menu();
-    cin >> input;
+    
     
     
     return 0;
