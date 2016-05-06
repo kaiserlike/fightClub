@@ -21,7 +21,7 @@ using namespace std;
 
 void createFighter(string nickname){
     int choice = 0;
-    map<string, class Fighter> fightClub;
+    map<string, Fighter*> fightClub;
     
     //we need to accomodate 4 different kinds of choices and...
     cout << "*** CREATE FIGHTER ***" << endl;
@@ -36,27 +36,30 @@ void createFighter(string nickname){
         case '1':{                                                //warrior
             
             Fighter * warriorP = new Warrior(nickname);
-            cout << "New Warrior "<< nickname << " created!" << endl;
             //safe the new warrior in map
-            fightClub[nickname] = *warriorP;
+            fightClub[nickname] = warriorP;
+            cout << "New Warrior "<< nickname << " created!" << endl;
             break;
         }
         case '2':{                                                //ninja
             Fighter * ninjaP = new Ninja(nickname);
-            cout << "New Ninja "<< nickname << " created!" << endl;
             //safe the new ninja in map
+            fightClub[nickname] = ninjaP;
+            cout << "New Ninja "<< nickname << " created!" << endl;
             break;
         }
         case '3':{                                                //link
             Fighter * linkP = new Link(nickname);
-            cout << "New Link "<< nickname << " created!" << endl;
             //safe the new link in map
+            fightClub[nickname] = linkP;
+            cout << "New Link "<< nickname << " created!" << endl;
             break;
         }
         case '4':{                                                //cursed
             Fighter * cursedP = new Cursed(nickname);
-            cout << "New Cursed "<< nickname << " created!" << endl;
             //safe the new cursed in map
+            fightClub[nickname] = cursedP;
+            cout << "New Cursed "<< nickname << " created!" << endl;
             break;
         }
     }
