@@ -1,8 +1,8 @@
 
 
-#ifndef fightClub_functions_hpp
-#define fightClub_functions_hpp
+#ifndef fightClubFunctions_h
+#define fightClubFunctions_h
 
 #include <stdio.h>
 
-#endif /* fightClub_functions_hpp */
+#endif /* fightClubFunctions_h */

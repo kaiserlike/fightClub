@@ -8,7 +8,7 @@
 //WHAT WE NEED:
 
 //menu
-void menu(){                                                //hauptmenü
+void menu(){                                                        //hauptmenü
     cout << "*** MAIN MENU ***" << endl;
     cout << "to create a new fighter press (1)" << endl;
     cout << "to chose the fight mode press (2)" << endl;
@@ -21,13 +21,43 @@ void menu(){                                                //hauptmenü
 //pick a nickname
 //store nickname/subclass pair in map
 
+void createFighter(int kind){
+    //we need to accomodate 4 different kinds of choices and...
+    switch (kind){
+        case(1):{                                                //warrior
+        
+        }
+        case(2):{                                                //ninja
+            
+        }
+        case(3):{                                                //link
+            
+        }
+        case(4):{                                                //cursed
+            
+        }
+    }
 
+    //store them in a map, with the key being the nickname and the value being the subclass
+    
+    
+    cout << "New " << kind << "created!" << endl;
+    
+    new
+    
+    
+    
+};
 
 //deleteFighter() function
 //delete a map item (with deconstructor + ?)
 
+
+
 //listFighter() function
 //lists all the available fighters in the map with their abilities (abilities are only specials?)
+
+
 
 //fight mode:
 //1 vs 1:
@@ -55,32 +85,8 @@ case(4)
     
 };
 
-void menu(){
-    //optionen:
-    //create() fighter
-    //muss zuerst aussuchen, ob warrior(1), ninja(2),
-    //fightmodus aussuchen
-    //one on one
-    //last fighter standing
-    //list() all fighters with abilities
-    //delete() fighter
-}
 
 
-
-
-
-
-
-
-
-
-
-
-int main(){
-    
-    return 0;
-}
 
 
 
