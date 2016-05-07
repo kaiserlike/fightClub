@@ -12,18 +12,26 @@ class Fighter {
         Fighter(string name);
         void turn(string name);
         int lifePoints = 100;
-        //virtual ~Fighter();
+        virtual ~Fighter(){};
+        int getHP();
+        int getDP();
+        int getOP();
+        virtual string getSpecial(){
+            return "No specials";
+        };
+    
 
     protected:
         string nickname;
-        int defensePoints, offensePoints, hitPoints;
+        int defensePoints, offensePoints;
+        int hitPoints = 0;
 
 };
 
 class Warrior : public Fighter {
     public:
         Warrior(string name);
-
+        string getSpecial();
     private:
         void warriorSpecial();
 };
@@ -31,6 +39,7 @@ class Warrior : public Fighter {
 class Ninja : public Fighter {
     public:
         Ninja(string name);
+        string getSpecial();
     private:
         void ninjaSpecial();
 };
@@ -38,6 +47,7 @@ class Ninja : public Fighter {
 class Link : public Fighter {
     public:
         Link(string name);
+        string getSpecial();
     private:
         void linkSpecial();
 };
@@ -45,6 +55,7 @@ class Link : public Fighter {
 class Cursed : public Fighter {
     public:
         Cursed(string name);
+        string getSpecial();
     private:
         bool unDead(int hP);
 };

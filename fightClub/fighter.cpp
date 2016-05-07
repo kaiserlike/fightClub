@@ -7,6 +7,16 @@ Fighter::Fighter(string name){      //constructor fighter
     offensePoints = rand() % 26 + 25;       // random number between 25 an 50
 }
 
+int Fighter::getHP(){
+    return hitPoints;
+}
+int Fighter::getDP(){
+    return defensePoints;
+}
+int Fighter::getOP(){
+    return offensePoints;
+}
+
 
 //SUBCLASS WARRIOR
 
@@ -17,6 +27,10 @@ void Warrior::warriorSpecial(){
     if(rng == 5){
         hitPoints = hitPoints * 2;
     }
+}
+
+string Warrior::getSpecial(){
+    return "1 in 6 chance of attacking twice as powerful.";
 }
 
 
@@ -32,6 +46,9 @@ void Ninja::ninjaSpecial(){
     }
 }
 
+string Ninja::getSpecial(){
+    return "1 in 6 chance of evading an attack while still defending.";
+}
 
 
 
@@ -39,7 +56,9 @@ void Ninja::ninjaSpecial(){
 
 Link::Link(string name) : Fighter(name){};        //constructor link
 
-
+string Link::getSpecial(){
+    return "1 in ? chance of getting healed by a fairy.";
+}
 
 
 
@@ -67,6 +86,10 @@ bool Cursed::unDead(int damage){
         return false;
     }
 
+}
+
+string Cursed::getSpecial(){
+    return "Turns into an undead Fighter when killed.";
 }
 
 
