@@ -50,7 +50,7 @@ void returnToMM(){                                      //to avoid repetition of
 void createFighter(string nickname){
     //debugging: cout << "The nickname you chose is " << nickname << endl;
     unsigned int choice = 0;
-    
+
     // CREATE FIGHTER submenu
     cout << "*** CREATE FIGHTER ***" << endl;
     cout << "To create a new Warrior, press (1)" << endl;
@@ -60,7 +60,7 @@ void createFighter(string nickname){
     cout << "To return to main menu press (0)" << endl;
     cin >> choice;
     //debugging: cout << "The choice you made is " << choice << endl;
-    
+
     switch (choice){
         case 1:{                                                //warrior
             //create new Warrior and insert it into the map with the nickname
@@ -90,11 +90,11 @@ void createFighter(string nickname){
         }break;
     }
     int doNext = 0;
-    
+
     cout << "To create another Fighter, press (1)" << endl;
     cout << "To return to the main menu, press (0)" << endl;
     cin >> doNext;
-    
+
     switch (doNext) {
         case 1:{
             createFighter(createNickName());
@@ -123,11 +123,11 @@ void deleteFighter(string nickname){
         menu();
     }
     int doNext = 0;
-    
+
     cout << "To wipe out another Fighter, press (1)" << endl;
     cout << "To return to the main menu, press (0)" << endl;
     cin >> doNext;
-    
+
     switch (doNext){
         case 1:{
             deleteFighter(deleteNickName());
@@ -159,8 +159,66 @@ void listFighters(){
     returnToMM();
 }
 
+void chooseFighter1(){
+    string chosenFighter1;
+    cout << "Choose your fighter player one: " << endl;
+    cin >> chosenFighter1;
+    if(!fightClub.empty()){
+        for(auto elem : fightClub){
+            if(elem.first == chosenFighter1){
+                elem.second->playerNumber = 1;
+            }
+        }
+    }
+}
+
+void chooseFighter2(){
+    string chosenFighter2;
+    cout << "Choose your fighter player two: " << endl;
+    cin >> chosenFighter2;
+    if(!fightClub.empty()){
+        for(auto elem : fightClub){
+            if(elem.first == chosenFighter2){
+                if(elem.second->playerNumber == 1){
+                    cout << "Fighter already taken!" << endl;
+                    chooseFighter2();
+                }else{
+                    elem.second->playerNumber = 2;
+                }
+            }
+        }
+    }
+}
+
+void fightRound(){
+    int enter;
+    cout << "Player one press Enter to attack: " << endl;
+    cin >> enter;
+    for(auto elem : fightClub){
+        if(elem.second->playerNumber == 1){
+            elem.second->special();
+            int attack=elem.second->getOP();
+        }
+    }
+    for(auto elem : fightClub){
+        if(elem.second->playerNumber == 2){
+            elem.second->lifePoints=lifePoints - attack;
+        }
+    }
+}
+
+void oneVone(){
+
+    chooseFighter1();
+    chooseFighter2();
 
 
+
+
+
+
+
+}
 //fight mode:
 //1 vs 1:
 //pick 2 fighters per nickname and let them fight against each other
@@ -172,21 +230,21 @@ void listFighters(){
 //menu
 void menu(){                                                        //hauptmenü
     unsigned int input = 0;
-    
+
     cout << "*** MAIN MENU ***" << endl;
     cout << "To create a new Fighter, press (1)" << endl;
     cout << "To choose the fight mode, press (2)" << endl;
     cout << "To list all available Fighters, press (3)" << endl;
     cout << "To delete an existing Fighter, press (4)" << endl;
-    
+
     cin >> input;
-    
+
     switch (input){
         case 1:{
             createFighter(createNickName());
         }break;
         case 2:{                                                //fight mode
-            //fight mode: 1v1 or deathmatch
+            oneVone();
         }break;
         case 3:{                                                //list
             listFighters();

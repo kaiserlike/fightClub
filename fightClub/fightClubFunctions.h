@@ -12,6 +12,14 @@ void menu();
 
 void createFighter();
 
+void chooseFighter1();
+
+void chooseFighter2();
+
+void fightRound();
+
+void oneVone();
+
 
 
 #endif /* fightClubFunctions_h */

@@ -17,12 +17,15 @@ int Fighter::getOP(){
     return offensePoints;
 }
 
+//int Fighter::getPl(){
+  //  return playerNumber;
+//}
 
 //SUBCLASS WARRIOR
 
 Warrior::Warrior(string name) : Fighter(name){};    //constructor warrior
 
-void Warrior::warriorSpecial(){
+void Warrior::special(){
     int rng = rand() % 6;
     if(rng == 5){
         hitPoints = hitPoints * 2;
@@ -39,7 +42,7 @@ string Warrior::getSpecial(){
 
 Ninja::Ninja(string name) : Fighter(name){};        //constructor ninja
 
-void Ninja::ninjaSpecial(){
+void Ninja::special(){
     int evade = rand() % 6;
     if (evade == 0){
         //Gegner trifft nicht
@@ -57,10 +60,18 @@ string Ninja::getSpecial(){
 Link::Link(string name) : Fighter(name){};        //constructor link
 
 string Link::getSpecial(){
-    return "1 in ? chance of getting healed by a fairy.";
+    return "1 in 6 chance of getting healed 40% by a fairy.";
 }
 
-
+void Link::special(){
+    int rng = rand() % 6;
+    if(rng == 5){
+        lifePoints += 40;
+        if(lifePoints > 100){
+            lifePoints = 100;
+        }
+    }
+}
 
 
 
@@ -69,7 +80,7 @@ string Link::getSpecial(){
 //SUBCLASS ZOMBIE
 
 Cursed::Cursed(string name) : Fighter(name){
-    
+
 }       //constructor zombie
 
 bool Cursed::unDead(int damage){
@@ -81,7 +92,7 @@ bool Cursed::unDead(int damage){
         //does not get a counterattack because he's too slow
         //MAYBE gets deadly bite, 1 in  10 chance of infecting other fighter with cursed
         return true;
-        
+
     }else{
         return false;
     }

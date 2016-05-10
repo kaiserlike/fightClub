@@ -16,10 +16,11 @@ class Fighter {
         int getHP();
         int getDP();
         int getOP();
+        int playerNumber = 0;
         virtual string getSpecial(){
             return "No specials";
         };
-    
+
 
     protected:
         string nickname;
@@ -33,7 +34,7 @@ class Warrior : public Fighter {
         Warrior(string name);
         string getSpecial();
     private:
-        void warriorSpecial();
+        void special();
 };
 
 class Ninja : public Fighter {
@@ -41,7 +42,7 @@ class Ninja : public Fighter {
         Ninja(string name);
         string getSpecial();
     private:
-        void ninjaSpecial();
+        void special();
 };
 
 class Link : public Fighter {
@@ -49,7 +50,7 @@ class Link : public Fighter {
         Link(string name);
         string getSpecial();
     private:
-        void linkSpecial();
+        void special();
 };
 
 class Cursed : public Fighter {
